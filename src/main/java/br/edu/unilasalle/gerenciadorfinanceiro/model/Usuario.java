@@ -1,6 +1,7 @@
 package br.edu.unilasalle.gerenciadorfinanceiro.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by 201320336 on 23/03/2017.
@@ -23,4 +24,12 @@ public class Usuario {
 
     @Column(name = "SENHA", length=100, nullable = false)
     private String senha;
+
+    @OneToMany()
+    @JoinColumn(name="CONTA_ID", foreignKey=@ForeignKey(name="USUARIO_CONTA_FK"))
+    private List<Conta> contas;
+
+    @OneToMany()
+    @JoinColumn(name="LANCAMENTO_ID", foreignKey=@ForeignKey(name="USUARIO_LANCAMENTO_FK"))
+    private List<Lancamento> lancamento;
 }

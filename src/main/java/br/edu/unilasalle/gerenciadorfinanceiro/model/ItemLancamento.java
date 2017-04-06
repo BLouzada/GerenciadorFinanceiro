@@ -23,4 +23,8 @@ public class ItemLancamento {
     @Column(name = "VALOR", nullable = false)
     private BigDecimal valor;
 
+    @ManyToOne(optional = false)
+    @JoinColumn(name="LANCAMENTO_ID", foreignKey=@ForeignKey(name="ITEM_LANCAMENTO_LANCAMENTO_FK"))
+    private Lancamento lancamento;
+
 }

@@ -21,10 +21,6 @@ public class Conta {
     @JoinColumn(name="BANCO_ID", foreignKey=@ForeignKey(name="CONTA_BANCO_FK"))
     private Banco banco;
 
-    @ManyToOne(optional=false)
-    @JoinColumn(name="USUARIO_ID", foreignKey= @ForeignKey(name="CONTA_USUARIO_FK"))
-    private Usuario usuario;
-
     public Long getId() {
         return id;
     }
@@ -42,12 +38,6 @@ public class Conta {
     }
     public void setBanco(Banco banco) {
         this.banco = banco;
-    }
-    public Usuario getUsuario() {
-        return usuario;
-    }
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
     }
 
 
